@@ -9,7 +9,7 @@ from sklearn.neighbors import KNeighborsClassifier
 
 BUCKET_ID = 'television-markup'
 
-X_train = mnist.train_images()
+X_train = mnist.train_images().reshape(-1, 28 ** 2) / 255
 y_train = mnist.train_labels()
 
 knn_clf = KNeighborsClassifier()
